@@ -1,4 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+
+import DrawerInitiator from '../utils/drawer-initiator';
+
 class App {
   constructor({ button, drawer, content }) {
     this._button = button;
@@ -10,7 +13,13 @@ class App {
 
   // eslint-disable-next-line class-methods-use-this
   _initialAppShell() {
+    DrawerInitiator.init({
+      button: this._button,
+      drawer: this._drawer,
+      content: this._content,
+    });
 
+    // other component
   }
 }
 
