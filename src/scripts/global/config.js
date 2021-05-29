@@ -7,6 +7,4 @@ const CONFIG = {
   DEFAULT_LANGUAGE: 'en-us',
 };
 
-console.log(`${APIKEY}`);
-
 export default CONFIG;
