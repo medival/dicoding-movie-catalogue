@@ -5,20 +5,20 @@
 
 import TheMovieDbSource from '../../data/themoviedb-source';
 import UrlPasrser from '../../routes/url-parser';
+import { createMovieDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
     return `
-		<h2> Detail Page </h2>
+      <div id="movie" class="movie"></div>
 	`;
   },
 
   async afterRender() {
     const url = UrlPasrser.parseActiveUrlWithoutCombiner();
     const movie = await TheMovieDbSource.detailMovie(url.id);
-    console.log(movie);
-    
-    // TODO: show movie with DOM
+    const movieContainer = document.querySelector('#movie');
+    movieContainer.innerHTML = createMovieDetailTemplate(movie);
   },
 };
 
