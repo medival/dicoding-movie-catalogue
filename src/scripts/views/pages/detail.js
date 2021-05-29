@@ -1,6 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable semi */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-tabs */
+
+import TheMovieDbSource from '../../data/themoviedb-source';
+import UrlPasrser from '../../routes/url-parser';
 
 const Detail = {
   async render() {
@@ -10,7 +14,11 @@ const Detail = {
   },
 
   async afterRender() {
-    // Function After Render
+    const url = UrlPasrser.parseActiveUrlWithoutCombiner();
+    const movie = await TheMovieDbSource.detailMovie(url.id);
+    console.log(movie);
+    
+    // TODO: show movie with DOM
   },
 };
 
