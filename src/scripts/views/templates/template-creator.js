@@ -3,7 +3,7 @@ import CONFIG from '../../global/config';
 
 const createMovieDetailTemplate = (movie) => `
 	<h2 class="movie__title"> ${movie.title} </h2>
-	<img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL}+movie.poster_path">
+	<img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL}${movie.poster_path}">
 	<div class="movie__info">
 		<h3> Information <h3>
 			<h4> Tagline <h4>
@@ -37,4 +37,4 @@ const createMovieItemTemplate = (movie) => `
 	</div>
 `;
 
-export { createMovieItemTemplate, createMovieDetailTemplate }
+export { createMovieItemTemplate, createMovieDetailTemplate };
