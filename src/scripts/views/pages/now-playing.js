@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable semi */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-tabs */
+
+import TheMovieDbSource from '../../data/themoviedb-source';
 
 const NowPlaying = {
   async render() {
@@ -10,7 +13,10 @@ const NowPlaying = {
   },
 	
   async afterRender() {
-    // Function after render
+    const movies = await TheMovieDbSource.nowPlayingMovies();
+    console.log(movies);
+    
+    // TODO: show movie with DOM
   },
 }
 
