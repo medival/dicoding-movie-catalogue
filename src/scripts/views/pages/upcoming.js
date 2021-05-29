@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable semi */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-tabs */
+
+import TheMovieDbSource from '../../data/themoviedb-source';
 
 const Upcoming = {
   async render() {
@@ -10,7 +13,10 @@ const Upcoming = {
   },
 	
   async afterRender() {
-    // Function after render
+    const movies = await TheMovieDbSource.upcomingMovies();
+    console.log(movies);
+    
+    // TODO: show movies with DOM
   },
 };
 
