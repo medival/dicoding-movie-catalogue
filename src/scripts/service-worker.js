@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
-
-const { default: CacheHelper } = require('./utils/cache-helper');
+import 'regenerator-runtime';
+import CacheHelper from './utils/cache-helper';
 
 const { assets } = global.ServiceWorkerOption;
 
