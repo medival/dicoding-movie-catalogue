@@ -1,5 +1,5 @@
 import { openDB } from 'idb';
-import { ids } from 'webpack';
+
 import CONFIG from '../global/config';
 
 const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
@@ -26,4 +26,3 @@ const FavoriteMovieIdb = {
 };
 
 export default FavoriteMovieIdb;
-
