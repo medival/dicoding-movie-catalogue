@@ -27,7 +27,7 @@ const Detail = {
       movie: {
         id: movie.id,
         title: movie.title,
-        overview: movie.ovierview,
+        overview: movie.overview,
         backdrop_path: movie.backdrop_path,
         vote_average: movie.vote_average,
       },
