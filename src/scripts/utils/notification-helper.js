@@ -1,12 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 const NotificationHelper = {
   sendNotification({ title, options }) {
-
     // TODO: Check availability
+    if (!this._checkAvailability()) {
+      console.log('Notification not supported in this browser');
+      return;
+    }
 
     // TODO: check permissions
+    if (!this._checkPermission()) {
+      console.log('User did not yet granted permission');
+      this._requestPermission();
+      return;
+    }
 
     // TODO: show notification
+    this._showNotification({ title, options });
   },
 
   _checkAvailability() {
